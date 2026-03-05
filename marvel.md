@@ -236,9 +236,9 @@ Using the knowledge gained from DLIC, I constructed a truth table and then plott
 ## Task 16: Datasheets report writing
 
 [L293D Motor Driver IC](Marvel/L293D.md)
-![My Image](Marvel/ds1.png)
+![My Image](Marvel/ds1.PNG)
 [MQ135 Gas sensor](Marvel/MQ135.md)
-![My Image](Marvel/ds2.png)
+![My Image](Marvel/ds2.PNG)
 
 
 ## Task 17: Introduction to VR
@@ -278,4 +278,5 @@ This task helped me improve my command-line skills, logical thinking, and proble
 
 
 ## Task 19:
+
 
