@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping App</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        #controls {
+            margin-bottom: 20px;
+        }
+
+        input, select {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 10px;
+            width: 200px;
+        }
+
+        img {
+            height: 120px;
+            object-fit: contain;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+
+        #cart {
+            margin-top: 30px;
+            border-top: 2px solid black;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🛒 Shopping App</h1>
+
+<div id="controls">
+    <input type="text" id="search" placeholder="Search products...">
+    <select id="category">
+        <option value="all">All Categories</option>
+    </select>
+</div>
+
+<div class="container" id="products"></div>
+
+<div id="cart">
+    <h2>Cart</h2>
+    <div id="cart-items"></div>
+    <h3 id="total">Total: $0</h3>
+</div>
+
+<script>
+let allProducts = [];
+let cart = [];
+
+// Fetch Products
+fetch('https://fakestoreapi.com/products')
+    .then(res => res.json())
+    .then(data => {
+        allProducts = data;
+        displayProducts(allProducts);
+        loadCategories(allProducts);
+    });
+
+// Display Products
+function displayProducts(products) {
+    const container = document.getElementById('products');
+    container.innerHTML = '';
+
+    products.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        card.innerHTML = `
+            <img src="${product.image}" height="100">
+            <h4>${product.title.substring(0, 40)}</h4>
+            <p>$${product.price}</p>
+            <button>Add to Cart</button>
+        `;
+
+        // Attach event properly
+        card.querySelector('button').addEventListener('click', () => {
+            addToCart(product.id);
+        });
+
+        container.appendChild(card);
+    });
+}
+function loadCategories(products) {
+    const categories = [...new Set(products.map(p => p.category))];
+    const categorySelect = document.getElementById('category');
+
+    categories.forEach(cat => {
+        const option = document.createElement('option');
+        option.value = cat;
+        option.textContent = cat;
+        categorySelect.appendChild(option);
+    });
+
+    categorySelect.addEventListener('change', function () {
+        if (this.value === "all") {
+            displayProducts(allProducts);
+        } else {
+            const filtered = allProducts.filter(p => p.category === this.value);
+            displayProducts(filtered);
+        }
+    });
+}
+
+// Add to Cart
+function addToCart(id) {
+    const product = allProducts.find(p => p.id === id);
+
+    if (product) {
+        cart.push(product);
+        updateCart();
+        alert("Item added to cart ✅");
+    }
+}
+
+// Remove from Cart
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+// Update Cart
+function updateCart() {
+    const cartItems = document.getElementById('cart-items');
+    const total = document.getElementById('total');
+
+    cartItems.innerHTML = '';
+    let sum = 0;
+
+    cart.forEach((item, index) => {
+        sum += item.price;
+
+        const div = document.createElement('div');
+        div.innerHTML = `
+            ${item.title.substring(0,20)} - $${item.price}
+            <button>Remove</button>
+        `;
+
+        div.querySelector('button').addEventListener('click', () => {
+            removeFromCart(index);
+        });
+
+        cartItems.appendChild(div);
+    });
+
+    total.innerText = "Total: $" + sum.toFixed(2);
+}
+</script>
+</body>
+</html>
