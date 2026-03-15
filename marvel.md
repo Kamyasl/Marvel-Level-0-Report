@@ -90,10 +90,6 @@ Basic Ubuntu Commands that i have learnt:
 
 ![My Image](Marvel/img6.jpg)
 
-## Task 5: 
-
-## Task 6: 
-
 ## Task 7: Create a Portfolio Webpage
 
 I created a personal portfolio website to display my education details, interests, and projects. The website has a modern dark theme with simple animations and different sections like Home, About Me, Projects, and Contact. It is responsive, so it works well on both mobile phones and computers. I used HTML, CSS, and JavaScript to build the website. I also took the help of ChatGPT to guide me in designing and improving the website.
@@ -275,8 +271,5 @@ This task helped me improve my command-line skills, logical thinking, and proble
 ![My Image](Marvel/ss3.png)
 ![My Image](Marvel/ss5.png)
 
-
-
-## Task 19:
 
 
