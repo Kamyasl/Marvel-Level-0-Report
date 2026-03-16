@@ -201,7 +201,7 @@ In this task, I learned about the soldering equipment available in the lab, incl
 To design a 555 timer in astable mode with a duty cycle of 60%, assemble the circuit on a breadboard, and observe the output waveform using a Digital Storage Oscilloscope (DSO).
 
 ![My Image](Marvel/555t1.png)
-![My Image](Marvel/555t4.jpeg)
+![My Image](Marvel/555t4.jfif)
 
 In this task, a 555 timer IC was configured in astable mode to generate a continuous square wave. The resistor and capacitor values were selected to achieve approximately 60% duty cycle using the astable mode duty cycle formula. The circuit was assembled on a breadboard with proper power supply connections and timing components. After powering the circuit, the output was connected to the DSO probe to observe the waveform. A square wave was successfully observed, and the high and low time intervals confirmed an approximate 60% duty cycle. 
 
