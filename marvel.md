@@ -132,13 +132,7 @@ I simulated a circuit using an **Arduino Uno** and an **HC-SR04 Ultrasonic Senso
 ![My Image](Marvel/tc2.png)
 [Ultrasonic Distance Measurement](https://www.tinkercad.com/things/45XvJmdACfR-detector-circuit?sharecode=rD9Sk7wDg9V4W5vk4F7LEP3ZhZEgWngd9kKk8zbs7DU)
 
-### Radar System Simulation
-I created a simple radar system using the **HC-SR04 Ultrasonic Sensor** and a **Micro Servo** connected to the Arduino Uno. The servo motor rotates the sensor from **0° to 180°**, allowing it to scan a wider area and detect objects within a certain range.
-
-![My Image](Marvel/tc3.png)
-[Ultrasonic Distance Measurement](https://www.tinkercad.com/things/7OR84QOeY0k-grand-robo?sharecode=zjEldE66Osw4SQ6YAvzJUcBATA4ZrQz24x9jV4rF1jA)
-
-Through this activity, I gained an introduction to Tinkercad, the working of an ultrasonic sensor and a servo motor, and the basic concept of radar technology.
+Through this activity, I gained an introduction to Tinkercad, the working of an ultrasonic sensor and the basic concept of radar technology.
 
 No special precautions were required as the circuit was simulated in Tinkercad.
 
