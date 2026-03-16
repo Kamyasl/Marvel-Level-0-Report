@@ -36,7 +36,7 @@ It works like a waiter in a restaurant:
 - The server processes it and sends back a response.  
 - The API delivers the response to you.  
 
-I created a shopping web application using the Fake Store API and chatgpt.
+I created a shopping web application using the Fake Store API with the help of ai.
 The app fetches product data from the API and displays the products dynamically on the webpage.
 #### The application uses:
 - **HTML** for structure
